@@ -1,6 +1,5 @@
 
 function populateGame(gameQuestions){
-    console.log("gameQuestions:", gameQuestions)
     const categories = [];
     gameQuestions.map((current, i) =>{
         if(!categories.includes(current.category)){
@@ -31,7 +30,7 @@ function displayQuestion(questionObj){
     $("#question").html(`${questionObj.question}`);
     $("#submit").on('click', (e) => {
         e.preventDefault();
-        if($("#answerText").val().toUpperCase() == questionObj.answer.toUpperCase()){
+        if(compareAnswers($("#answerText").val(), questionObj.answer)){
             currentScore += Number(questionObj.value.replace(/\$/g, ''));
             $("#question").html(`That is correct!`);
             $("#score").html(currentScore);

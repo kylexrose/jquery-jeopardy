@@ -1,15 +1,15 @@
 function checkForScore(){
-    if(window.localStorage.getItem('prevScore')){
-        currentScore = window.localStorage.getItem('prevScore');
+    const storedScore = window.localStorage.getItem('prevScore')
+    if(storedScore !== "undefined" && storedScore !== null){
+        currentScore = Number(storedScore);
         $('#score').html(currentScore);
     }
 }
 
 function checkForQuestions(){
-    //console.log(window.localStorage.getItem('prevQuestions')) 
-    if(window.localStorage.getItem('prevQuestions') !== "undefined"){  
-        console.log(JSON.parse(window.localStorage.getItem('prevQuestions')))
-        populateGame(JSON.parse(window.localStorage.getItem('prevQuestions')));
+    const storedQ = window.localStorage.getItem('prevQuestions'); 
+    if(storedQ !== "undefined" && storedQ !== null){  
+        populateGame(JSON.parse(storedQ));
     }
 }
 
