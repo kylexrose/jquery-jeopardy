@@ -32,7 +32,7 @@ function displayQuestion(questionObj){
     $("#submit").on('click', (e) => {
         e.preventDefault();
         if(compareAnswers($("#answerText").val(), questionObj.answer)){
-            currentScore += Number(questionObj.value.replace(/\$/g, ''));
+            currentScore += Number(questionObj.value.replace(/[\$\,]/g, ''));
             $("#question").html(`That is correct!`);
             $("#score").html(currentScore);
             $("#answerText").val("");
@@ -40,7 +40,7 @@ function displayQuestion(questionObj){
             $("#cover").toggle();
             storeScore(currentScore);
         }else{
-            currentScore -= Number(questionObj.value.replace(/\$/g, ''));
+            currentScore -= Number(questionObj.value.replace(/[\$\,]/g, ''));
             $("#question").html(`I'm sorry, that was incorrect. The correct answer is ${questionObj.answer}`);
             $("#score").html(currentScore);
             $("#submit").off();
