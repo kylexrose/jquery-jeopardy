@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy</title>
+    <link href="style.css" rel="stylesheet"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="title">Jeopardy! <button id="newGame">New Game</button><button id="reset">Reset</button></div>
+    <div id="scoreCard">Your Score: $<span id="score"></span></div>
+    <div id="gameBoard">
+    </div>
+    <div id="cover" hidden></div>
+    <div id="question"></div>
+    <div id="answer">
+        <form>
+            <label for="answerText">Your Answer</label>
+            <input type="text" id="answerText"/>
+            <button id="submit">Final Answer</button>
+        </form>
+    </div>
+    <script src="jeopardy.js"></script>
+    <script src="populateGame.js"></script>
+    <script src="gameStorage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
