@@ -18,7 +18,6 @@ function storeScore(score){
 }
 
 function storeQuestions(questionArray){
-    console.log(questionArray)
     window.localStorage.setItem('prevQuestions', JSON.stringify(questionArray));
 }
 
