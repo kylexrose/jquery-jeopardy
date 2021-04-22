@@ -26,6 +26,7 @@ function populateGame(gameQuestions){
 }
 
 function displayQuestion(questionObj){
+    console.log(questionObj.answer)
     $("#cover").toggle();
     $("#question").html(`${questionObj.question}`);
     $("#submit").on('click', (e) => {
